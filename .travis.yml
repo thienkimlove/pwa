@@ -11,11 +11,9 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - npm run build
-  - npm run precache
+  - ng build --prod
 
 after_success:
-  - firebase use default
   - firebase deploy --token $FIREBASE_TOKEN
 
 notifications:
